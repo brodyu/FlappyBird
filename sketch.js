@@ -23,6 +23,7 @@ function draw() {
     }
   }
 
+  bird.think(pipes);
   bird.update();
   bird.show();
 
@@ -31,9 +32,9 @@ function draw() {
   }
 }
 
-function keyPressed() {
-  if (key == ' ') {
-    bird.up();
-    //console.log("SPACE");
-  }
-}
+//function keyPressed() {
+//  if (key == ' ') {
+//    bird.up();
+//    //console.log("SPACE");
+//  }
+//}
