@@ -1,14 +1,3 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/cXgA1d_E-jY
-
-// P5 exported functions (eslint flags)
-/* exported preload, setup, draw, keyPressed */
-
-// Exported sprites (eslint flags)
-/* exported birdSprite, pipeBodySprite, pipePeakSprite */
-
 var bird;
 var pipes;
 var parallax = 0.8;
