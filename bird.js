@@ -1,21 +1,24 @@
-function Bird() {
-  this.y = height / 2;
-  this.x = 64;
 
-  this.gravity = 0.7;
-  this.lift = -12;
-  this.velocity = 0;
+class Bird {
+  constructor() {
+    this.y = height / 2;
+    this.x = 64;
 
-  this.show = function() {
+    this.gravity = 0.7;
+    this.lift = -12;
+    this.velocity = 0;
+  }
+  
+  show() {
     fill(255);
     ellipse(this.x, this.y, 32, 32);
   };
 
-  this.up = function() {
+  up() {
     this.velocity += this.lift;
   };
 
-  this.update = function() {
+  update() {
     this.velocity += this.gravity;
     // this.velocity *= 0.9;
     this.y += this.velocity;
