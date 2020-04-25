@@ -25,6 +25,7 @@ class Bird {
 
   think(pipes) {
 
+    //find the closest pipe
     let closest = null;
     let closestD = Infinity;
     for (let i = 0; i < pipes.length; i++) {
@@ -35,6 +36,7 @@ class Bird {
       }
     }
 
+    //AI thinks about what to do
     let inputs = [];
     inputs[0] = this.y / height;
     inputs[1] = closest.top / height;
@@ -42,7 +44,7 @@ class Bird {
     inputs[3] = closest.x / width;
 
     let output = this.brain.predict(inputs);
-    if (output > 0.5) {
+    if (output[0] > 0.5) {
       this.up();
     }
   }

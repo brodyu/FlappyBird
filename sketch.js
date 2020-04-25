@@ -1,4 +1,5 @@
-var bird;
+const TOTAL = 100;
+let birds = [];
 var pipes;
 var parallax = 0.8;
 var score = 0;
@@ -49,22 +50,24 @@ function draw() {
     pipes[i].update();
     pipes[i].show();
 
-    if (pipes[i].pass(bird)) {
-      score++;
-    }
+    // if (pipes[i].pass(bird)) {
+    //   score++;
+    // }
 
-    if (pipes[i].hits(bird)) {
-      gameover();
-    }
+    // if (pipes[i].hits(bird)) {
+    //   gameover();
+    // }
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
     }
   }
 
-  bird.think(pipes);
-  bird.update();
-  bird.show();
+  for (let bird of birds) {
+    bird.think(pipes);
+    bird.update();
+    bird.show();
+  }
 
   if ((frameCount - gameoverFrame) % 150 == 0) {
     pipes.push(new Pipe());
@@ -111,7 +114,9 @@ function reset() {
   score = 0;
   bgX = 0;
   pipes = [];
-  bird = new Bird();
+  for (let i = 0; i < TOTAL; i++) {
+    birds[i] = new Bird();
+  }
   pipes.push(new Pipe());
   gameoverFrame = frameCount - 1;
   loop();
