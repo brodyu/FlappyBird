@@ -54,9 +54,9 @@ function draw() {
     //   score++;
     // }
 
-    // if (pipes[i].hits(bird)) {
-    //   gameover();
-    // }
+    if (pipes[i].hits(bird)) {
+      gameover();
+    }
 
     if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
