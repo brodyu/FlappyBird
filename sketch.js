@@ -50,12 +50,13 @@ function draw() {
     pipes[i].update();
     pipes[i].show();
 
-    // if (pipes[i].pass(bird)) {
-    //   score++;
-    // }
-
-    if (pipes[i].hits(bird)) {
-      gameover();
+    for (let j = birds.length-1; j >= 0; j--) {
+      if (pipes[i].hits(birds[j])) {
+        birds.splice(j,1);
+      }
+      if (pipes[i].pass(birds[j])) {
+        score++;
+      }
     }
 
     if (pipes[i].offscreen()) {
