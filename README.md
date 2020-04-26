@@ -1,7 +1,7 @@
 # Flappy Bird Clone
 
-This repository is starting with the code from [Coding Challenge #31 on YouTube](https://www.youtube.com/watch?v=cXgA1d_E-jY). I am accepting pull requests for bug fixes, minor improvements to gameplay, and visual design. I do not want to make the code more complex as the goal is to use this as a basis for a "neuro-evolution" tutorial with the "toy" [neural network library](https://github.com/CodingTrain/Toy-Neural-Network-JS/).
+This repository is a remake of the popular game Flappy Birds. The repository includes two branches: master, which is the original game of Flappy Birds and ToyGeneticAlgo, which is the game played by AI. The AI neuroevolutionary meaning it is a combination of Artificial Intelligence and Genetic Algorithms. The idea here is that our AI will learn through sequential generations how to play the game Flappy Birds. 
 
-Coding Train themed graphics are welcome! (But keep it simple!)
+<iframe src="https://giphy.com/embed/Q72zwMTEvsDuCqcrNu" width="302" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Q72zwMTEvsDuCqcrNu">via GIPHY</a></p>
 
-* [Play the game!](https://codingtrain.github.io/Flappy-Bird-Clone/)
+Inspired by CodingTrain. 
