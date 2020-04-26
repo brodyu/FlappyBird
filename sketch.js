@@ -1,9 +1,13 @@
-const TOTAL = 500;
+const TOTAL = 1000;
 let birds = [];
 let savedBirds = [];
 let pipes = [];
 let counter = 0;
 let slider;
+let generation = 1;
+let alive = TOTAL;
+let score = 0;
+let bestScore = 0;
 
 function keyPressed() {
   if (key === 'S') {
@@ -13,7 +17,7 @@ function keyPressed() {
 }
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(619, windowHeight-180);
   slider = createSlider(1, 10, 1);
   for (let i = 0; i < TOTAL; i++) {
     birds[i] = new Bird();
@@ -33,6 +37,7 @@ function draw() {
       for (let j = birds.length - 1; j >= 0; j--) {
         if (pipes[i].hits(birds[j])) {
           savedBirds.push(birds.splice(j, 1)[0]);
+          alive = birds.length;
         }
       }
 
@@ -55,6 +60,12 @@ function draw() {
     if (birds.length === 0) {
       counter = 0;
       nextGeneration();
+      alive = TOTAL;
+      if (score > bestScore) {
+        bestScore = score;
+      }
+      score = 0;
+      generation++;
       pipes = [];
     }
   }
@@ -69,6 +80,15 @@ function draw() {
   for (let pipe of pipes) {
     pipe.show();
   }
+
+  setStats();
+}
+
+function setStats() {
+	document.getElementById('generation').value = generation;
+  document.getElementById('alive').value = alive;
+	document.getElementById('score').value = score;
+  document.getElementById('bestscore').value = bestScore;
 }
 
 // function keyPressed() {
