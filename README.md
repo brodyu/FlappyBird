@@ -5,7 +5,7 @@ This repository is a remake of the popular game Flappy Birds. The repository inc
 <h4 align="center">Flappy Bird NeuroEvolution</h4>
 <hr>
 <p align="center">
-<img src = "./gifs/flappybird.gif" height=400 width=600>
+<img src = "./graphics/flappybird.gif" height=400 width=600>
 </p>
 
 Inspired by CodingTrain. 
