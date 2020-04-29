@@ -28,6 +28,7 @@ function keyPressed() {
 function setup() {
   createCanvas(400, 600);
   slider = createSlider(1, 10, 1);
+
   for (let i = 0; i < TOTAL; i++) {
     birds[i] = new Bird();
   }
