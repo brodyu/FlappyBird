@@ -8,8 +8,11 @@ let generation = 1;
 let alive = TOTAL;
 let score = 0;
 let bestScore = 0;
+let scrollSpeed = 1;
+let x1 = 0;
+let x2;
 
-let birdImg, pipeImg, pipeRevImg, backgroundImg;
+let birdImg, pipeImg, pipeRevImg, backgroundImg, backgroundImage1, backgroundImage2;
 
 function preload() {
   birdImg = loadImage('graphics/bird.png');
@@ -28,6 +31,8 @@ function keyPressed() {
 function setup() {
   createCanvas(400, 600);
   slider = createSlider(1, 10, 1);
+  slider.position(225, 180);
+  x2 = width;
 
   for (let i = 0; i < TOTAL; i++) {
     birds[i] = new Bird();
@@ -78,10 +83,23 @@ function draw() {
       generation++;
       pipes = [];
     }
+
+    //moving background image
+    backgroundImage1 = image(backgroundImg, x1, 0, width, height);
+    backgroundImage2 = image(backgroundImg, x2, 0, width, height);
+    x1 -= scrollSpeed;
+    x2 -= scrollSpeed;
+
+    if (x1 < -width){
+      x1 = width;
+    }
+    if (x2 < -width){
+      x2 = width;
+    }
   }
 
   // All the drawing stuff
-  background(backgroundImg);
+  //background(backgroundImage);
 
   for (let bird of birds) {
     bird.show();
