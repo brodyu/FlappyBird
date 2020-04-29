@@ -20,9 +20,12 @@ class Pipe {
 
   show() {
     fill(255);
-    rectMode(CORNER);
-    rect(this.x, 0, this.w, this.top);
-    rect(this.x, height - this.bottom, this.w, this.bottom);
+    image(pipeRevImg, this.x, 0, this.w, this.top);
+
+    fill(0, 255, 0);
+    let height_b = height - this.spacing - this.top;
+    let y_b = height - height_b;
+    image(pipeImg, this.x, y_b, this.w, height_b);
   }
 
   update() {

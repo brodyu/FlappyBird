@@ -3,6 +3,8 @@ class Bird {
     this.y = height / 2;
     this.x = 64;
 
+    this.r = 50;
+
     this.gravity = 0.8;
     this.lift = -12;
     this.velocity = 0;
@@ -17,9 +19,18 @@ class Bird {
   }
 
   show() {
-    stroke(255);
-    fill(255, 100);
-    ellipse(this.x, this.y, 32, 32);
+    fill(255);
+    push();
+    imageMode(CENTER);
+    translate(this.x, this.y);
+    // if (this.up || this.velocity < 0) {
+    //   rotate(-35);
+    // } else {
+    //   rotate(35);
+    // }
+    // ellipse(this.x, this.y, this.r);
+    image(birdImg, 0, 0, this.r, this.r);
+    pop();
   }
 
   up() {
