@@ -18,7 +18,7 @@ function preload() {
   birdImg = loadImage('graphics/bird.png');
   pipeImg = loadImage('graphics/pipes.png');
   pipeRevImg = loadImage('graphics/pipes_reverse.png');
-  backgroundImg = loadImage('graphics/background.png');
+  backgroundImg = loadImage('graphics/bg.png');
 }
 
 function keyPressed() {
